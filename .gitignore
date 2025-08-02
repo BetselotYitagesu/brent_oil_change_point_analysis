@@ -1,0 +1,32 @@
+# Bytecode and Python cache
+__pycache__/
+*.py[cod]
+
+# Virtual environment
+.venv/
+
+# VS Code config
+.vscode/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Temporary files and logs
+*.log
+*.tmp
+
+# Data files (keep only manually curated files)
+data/*.csv
+!data/key_events.csv  # Allow tracking of key event metadata
+
+# Model outputs and artifacts
+*.pkl
+*.npz
+*.joblib
+
+# Image outputs (if plotted/auto-generated)
+*.png
+*.jpg
+
+# Notebook export artifacts
+*.nbconvert.ipynb

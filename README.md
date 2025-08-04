@@ -155,3 +155,15 @@ This lays the foundation for deeper analysis in Task 2.2, where we will match de
 
 
 - Task 3: Build an interactive dashboard for
+
+## 📊 Task 3: Interactive Dashboard Development
+
+The goal of this task is to create a dashboard application for stakeholders to interactively explore Brent oil price trends and understand the effects of geopolitical and economic events over time. The dashboard will integrate the following:
+
+- Historical Brent oil price data (from 1987–2022)
+- Statistically significant change points (from Bayesian model)
+- Key global events (e.g., Gulf War, COVID-19)
+
+The dashboard consists of:
+- A Flask backend serving cleaned time series, change points, and event data
+- A React frontend for displaying interactive visualizations

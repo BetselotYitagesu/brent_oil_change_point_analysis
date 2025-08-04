@@ -81,3 +81,77 @@ source .venv/bin/activate     # On Windows: .venv\Scripts\activate
 
 # Install dependencies
 pip install -r requirements.txt
+
+
+# 🛢️ Task 2: Change Point Modeling and Insight Generation
+
+## 📌 Task 2.1 – Bayesian Change Point Modeling (PyMC3)
+
+### 🎯 Goal
+
+In this task, we implement a **Bayesian change point detection model** using PyMC3 to identify statistically significant structural breaks in Brent oil prices over time. The model helps us understand when a major change in price behavior occurred and how it aligns with real-world geopolitical or economic events.
+
+---
+
+### ⚙️ Model Overview
+
+- **Framework**: PyMC3 (Bayesian Probabilistic Programming)
+- **Model Type**: One-change-point model in daily log returns
+- **Inference**: MCMC (NUTS for continuous vars, Metropolis for discrete `tau`)
+- **Observations**: Daily log returns of Brent oil prices (stationary series)
+
+#### Parameters:
+- `tau`: Unknown change point (discrete uniform)
+- `mu_1`, `mu_2`: Mean return before and after the change
+- `sigma`: Shared volatility
+
+#### Structure:
+The model assumes that the time series has **two regimes**, with a switch at some unknown time `tau`. It infers:
+- When the change occurred
+- What the average returns were before and after
+
+---
+
+### 📉 Sampling Details
+
+- **Draws**: 100 posterior samples per chain
+- **Tuning**: 250 steps
+- **Chains**: 2
+- **Sampler**:
+  - `tau` (discrete): Metropolis
+  - `mu_1`, `mu_2`, `sigma`: NUTS
+
+---
+
+### 📊 Results
+
+- **Change Point Detected**: [to be filled after inference]
+- **Posterior Summary**: Shows high confidence in parameter values
+- **Trace Plots**: Used to check convergence and sampling quality
+
+---
+
+### 📁 Key Files
+
+| File | Description |
+|------|-------------|
+| `notebooks/02_change_point_model.ipynb` | Full model implementation, sampling, and posterior interpretation |
+| `data/brent_prices_cleaned.csv` | Cleaned price data with consistent date formats |
+| `data/key_events.csv` | Timeline of geopolitical/economic events to be compared with model outputs |
+
+---
+
+### 🧠 Insights (Preliminary)
+
+The Bayesian change point model provides a **probabilistic estimate** of when the structure of returns changed — this is valuable in correlating economic events (e.g., wars, recessions, OPEC cuts) with market responses.
+
+This lays the foundation for deeper analysis in Task 2.2, where we will match detected change points to real events and quantify the impact.
+
+---
+
+### ✅ Next Steps
+
+- Task 2.2: Interpret results and align change points with real-world events
+
+
+- Task 3: Build an interactive dashboard for

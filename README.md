@@ -31,8 +31,6 @@ This analysis helps answer the question:
 ├── .gitignore
 └── README.md
 
-
-
 ---
 
 ## 📊 Task 1 Summary: Data Understanding & Workflow Design

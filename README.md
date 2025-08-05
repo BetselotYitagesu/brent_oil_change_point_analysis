@@ -154,16 +154,67 @@ This lays the foundation for deeper analysis in Task 2.2, where we will match de
 - Task 2.2: Interpret results and align change points with real-world events
 
 
-- Task 3: Build an interactive dashboard for
+# Task 3: Interactive Dashboard for Change Point Analysis
 
-## 📊 Task 3: Interactive Dashboard Development
+This dashboard enables interactive exploration of Brent oil price change points and their correlation with major geopolitical or economic events.
 
-The goal of this task is to create a dashboard application for stakeholders to interactively explore Brent oil price trends and understand the effects of geopolitical and economic events over time. The dashboard will integrate the following:
+## 🎯 Objective
+To build an end-to-end dashboard application that:
+- Displays results of Bayesian change point analysis
+- Allows stakeholders to explore how events influenced Brent oil price trends
+- Supports interactivity with filters and timelines
 
-- Historical Brent oil price data (from 1987–2022)
-- Statistically significant change points (from Bayesian model)
-- Key global events (e.g., Gulf War, COVID-19)
+## 🧱 Project Structure
 
-The dashboard consists of:
-- A Flask backend serving cleaned time series, change points, and event data
-- A React frontend for displaying interactive visualizations
+# Task 3: Interactive Dashboard for Change Point Analysis
+
+This dashboard enables interactive exploration of Brent oil price change points and their correlation with major geopolitical or economic events.
+
+## 🎯 Objective
+To build an end-to-end dashboard application that:
+- Displays results of Bayesian change point analysis
+- Allows stakeholders to explore how events influenced Brent oil price trends
+- Supports interactivity with filters and timelines
+
+## 🧱 Project Structure
+
+
+---
+
+## ⚙️ Backend: Flask API
+
+The Flask backend provides a RESTful API to serve change point data.
+
+### 📁 Endpoint
+Serves the list of detected change points as JSON.
+
+### ✅ To run the backend:
+```bash
+cd dashboard/backend
+python app.py
+
+Serves the list of detected change points as JSON.
+
+### ✅ To run the backend:
+```bash
+cd dashboard/backend
+python app.py
+
+Serves the list of detected change points as JSON.
+
+### ✅ To run the backend:
+```bash
+cd dashboard/backend
+python app.py
+
+Server runs at: http://localhost:5000
+
+💻 Frontend: React App
+Built using create-react-app, the frontend fetches data from the Flask API and displays it interactively.
+
+✅ To run the frontend:
+
+cd dashboard/frontend
+npm install
+npm start
+Runs at: http://localhost:3000
